@@ -38,7 +38,7 @@ public class Client extends JFrame {
         setVisible(true);
         
         try {
-            Socket socket = new Socket("192.168.1.102", 8000);
+            Socket socket = new Socket("localhost", 8000);
             System.out.println(socket.isConnected());
             
             fromServer = new DataInputStream(socket.getInputStream());
