@@ -38,7 +38,7 @@ public class TicTacToeClient extends JApplet implements Runnable, TicTacToeConst
     
     private boolean isStandAlone = true;
     
-    private String host = "10.18.22.36";
+    private String host = "127.0.0.1";
     
     public void init() {
         JPanel p = new JPanel();
