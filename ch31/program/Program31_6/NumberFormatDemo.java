@@ -47,7 +47,7 @@ public class NumberFormatDemo extends JApplet {
         p2.add(new JLabel("Interest Rate"));
         p2.add(jtfInterestRate);
         p2.add(jtfFormattedInterestRate);
-        p2.add(new JLabel("NUmber of Years"));
+        p2.add(new JLabel("Number of Years"));
         p2.add(jtfNumberOfYears);
         p2.add(jtfFormattedNumberOfYears);
         p2.add(new JLabel("Loan Amount"));
