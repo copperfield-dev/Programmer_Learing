@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> {{ room.name }} </h1>
+
+{% if display %}
+<p>
+    <em style="color: dodgerblue; ">{{ display }}</em>
+</p>
+{% endif %}
+
+<pre>
+{{ room.description }}
+</pre>
+
+{% if room.name in [ "The End Win", "The End Loser"] %}
+    <p><a href="/">Play Again?</a></p>
+{% elif room.name == "Laser Weapon Armory" %}
+    <p>
+    <form action="/game" method="POST">
+        Guess Code: <input type="text" name="code"> <input type="SUBMIT">
+    </form>
+    </p>
+{% elif room.name == "Escape Pod" %}
+    <p>
+    <form action="/game" method="POST">
+        Guess Pod: <input type="text" name="pod"> <input type="SUBMIT">
+    </form>
+    </p>
+{% else %}
+    <p>
+    <form action="/game" method="POST">
+        - <input type="text" name="action"> <input type="SUBMIT">
+    </form>
+    </p> 
+{% endif %}
+
+{% endblock %}
