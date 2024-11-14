@@ -101,6 +101,7 @@ class AlienInvasion:
             # 删除现有的所有子弹, 并创建一个新的外星舰队
             self.bullets.empty()               
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _update_aliens(self):
         """检查是否有外星人位于屏幕边缘, 并更新整个外星舰队的位置"""
@@ -130,7 +131,10 @@ class AlienInvasion:
     def _chcek_play_button(self, mouse_pos):
         """在玩家单击Play按钮时开始新游戏"""
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
-        if button_clicked and not self.game_active:               
+        if button_clicked and not self.game_active:
+            # 还原游戏设置             
+            self.settings.initialize_dynamic_settings()
+
             # 重置游戏的统计信息
             self.stats.reset_stats()
             self.game_active = True
