@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cow@2m(#idgm4n7n%neel8mg64d-^ozeni70(&@jz7k=_cgaj@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     # My apps.
     'learning_logs',
     'accounts',
+
+    # Third party apps. 
+    'django_bootstrap5',
+
     # Default django apps.
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +62,7 @@ ROOT_URLCONF = 'll_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
