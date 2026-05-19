@@ -17,6 +17,10 @@ Icon
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
+### VSCode
+# VSCode directory
+.vscode/
+
 ### JetBrains
 # JetBrains IDE directory
 .idea/
